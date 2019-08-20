@@ -115,7 +115,7 @@ function(
 
       //Get the distance the user wants
       var food = esriRequest({
-        url: "https://api.yelp.com/v3/businesses/search",
+        url: this.apiSearchUrl,
         content: {
           f: "json",
           latitude: x,

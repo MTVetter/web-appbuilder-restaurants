@@ -129,6 +129,8 @@ function(
         headers: {
           "Authorization": "Bearer " + this.apiKey
         }
+      },{
+        usePost: false
       }).then(lang.hitch(this, function(response){
         console.log("HEY");
         console.log(response);

@@ -132,6 +132,7 @@ function(
       },{
         usePost: false
       });
+      console.log("HEY");
 
       food.then(lang.hitch(this, function(response){
         console.log(response);
@@ -161,7 +162,6 @@ function(
           var graphic = new esri.Graphic(pt);
           //Add attributes to the graphic
           graphic.setAttributes(attr);
-          // this.map.graphics.add(graphic);
           //Add the graphic to the feature layer
           this.featureLayer.add(graphic);
         }

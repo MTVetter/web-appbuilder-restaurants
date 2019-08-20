@@ -117,6 +117,7 @@ function(
       var food = esriRequest({
         url: this.apiSearchUrl,
         content: {
+          f: "json",
           latitude: x,
           longitude: y,
           radius: 4828,
@@ -128,13 +129,9 @@ function(
         headers: {
           "Authorization": "Bearer " + this.apiKey
         }
-      },{
-        usePost: false
-      });
-
-      food.then(lang.hitch(this, function(response){
+      }).then(lang.hitch(this, function(response){
         console.log("HEY");
-        console.log("response", response);
+        console.log(response);
         var i;
 
         //Loop through all the results and add them to the feature layer

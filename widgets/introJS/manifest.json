@@ -1,0 +1,16 @@
+{
+  "name": "introJS",
+  "platform": "HTML",
+  "version": "2.9",
+  "wabVersion": "2.9",
+  "author": "Robert Scheitlin",
+  "description": "Button for launching intro JS",
+  "copyright": "2018",
+  "license": "http://www.apache.org/licenses/LICENSE-2.0",
+  "properties": {
+    "inPanel": false,
+    "hasUIFile": false,
+    "hasConfig": false,
+    "supportMultiInstance": false
+  }
+}

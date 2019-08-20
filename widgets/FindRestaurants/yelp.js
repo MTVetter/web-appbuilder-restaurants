@@ -27,11 +27,15 @@ function(
       // We must pass an API key into the constructor or things will not work at all:
       if(apiKey) {
         this.apiKey = apiKey;
-        this.apiSearchUrl = apiSearchUrl;
-        esriConfig.defaults.io.corsEnabledServers.push("https://api.yelp.com/v3/businesses/search");
-        console.log(esriConfig);
       } else {
         console.error('Error getting API key.');
+      }
+
+      if (apiSearchUrl){
+        this.apiSearchUrl = apiSearchUrl;
+        esriConfig.defaults.io.corsEnabledServers.push(apiSearchUrl);
+      } else {
+        console.error("Error getting search url.");
       }
     },
 
@@ -42,13 +46,6 @@ function(
      * @returns {promise} returns a promise that will resolve to the results.
      */
     getLocations(x, y, map) {
-      // map.graphics.clear();
-
-      // //add a graphic for the searched address
-      // var searchMarker = new SimpleMarkerSymbol(SimpleMarkerSymbol.STYLE_CIRCLE, 5, new SimpleLineSymbol(SimpleLineSymbol.STYLE_SOLID, new Color([200,26,26])), new Color([200,26,26]));
-      // var searchPoint = new esri.geometry.Point({"x":y, "y":x, "spatialReference":{wkid:4326}});
-      // var searchGraphic = new esri.Graphic(searchPoint, searchMarker);
-      // map.graphics.add(searchGraphic);
 
       //Create a feature collection which will form the new feature layer
       var featureCollection ={
@@ -61,21 +58,6 @@ function(
       featureCollection.layerDefinition = {
         "geometryType": "esriGeometryPoint",
         "drawingInfo": {
-          // "renderer": {
-          //   "type": "simple",
-          //   "symbol": {
-          //     "color": [210,105,30,191],
-          //     "size": 8,
-          //     "type": "esriSMS",
-          //     "style": "esriSMSCircle",
-          //     "outline": {
-          //       "color": [0,0,128,255],
-          //       "width": 0,
-          //       "type": "esriSLS",
-          //       "style": "esriSLSSolid"
-          //     }
-          //   }
-          // }
           "renderer":{
             "type": "simple",
             "symbol":{
@@ -132,7 +114,7 @@ function(
 
       //Get the distance the user wants
       var food = esriRequest({
-        url: "http://api.yelp.com/v3/businesses/search",
+        url: this.apiSearchUrl,
         content: {
           f: "json",
           latitude: x,
@@ -149,25 +131,6 @@ function(
       },{
         usePost: false
       });
-
-      // //Use the Yelp API to find restaurants within a mile of the searched address
-      // var food = esriRequest({
-      //   url: "http://api.yelp.com/v3/businesses/search",
-      //   content: {
-      //     f: "json",
-      //     latitude: x,
-      //     longitude: y,
-      //     radius: 1610,
-      //     sort_by: "rating",
-      //     categories: "restaurants, All"
-      //   },
-      //   handleAs: "json",
-      //   headers: {
-      //     "Authorization": "Bearer JAonzvDvhi6PPEDnasZivP49GngU4D5UXjQcnfVDzMiO99BInmBYCA84DVYbWdDF0syzwr2sEhceCOhFJN5Extj0cGvZwu-3WNpZh_GOd-TmPBz5NxE57ECyzw8YXHYx"
-      //   }
-      // },{
-      //   usePost: false
-      // });
 
       food.then(lang.hitch(this, function(response){
         console.log(response);

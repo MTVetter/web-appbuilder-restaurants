@@ -134,10 +134,10 @@ function(
       }).then(lang.hitch(this, function(response){
         console.log("HEY");
         console.log(response);
-        var i;
+        var i = 0;
 
         //Loop through all the results and add them to the feature layer
-        for (i = 0; i < response.businesses.length; i++){
+        for (i < response.businesses.length; i++;){
 
           //Setting up the attributes from the results
           var oid = i;

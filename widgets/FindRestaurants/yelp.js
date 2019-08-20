@@ -131,7 +131,9 @@ function(
         }
       },{
         usePost: false
-      }).then(lang.hitch(this, function(response){
+      });
+
+      food.then(lang.hitch(this, function(response){
         console.log("HEY");
         console.log(response);
         var i;

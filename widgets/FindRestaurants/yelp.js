@@ -35,6 +35,7 @@ function(
         this.apiSearchUrl = apiSearchUrl;
         esriConfig.defaults.io.corsEnabledServers.push(apiSearchUrl);
       } else {
+        console.log(apiSearchUrl);
         console.error("Error getting search url.");
       }
     },

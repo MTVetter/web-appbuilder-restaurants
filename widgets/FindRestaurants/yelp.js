@@ -115,7 +115,7 @@ function(
 
       //Get the distance the user wants
       var food = esriRequest({
-        url: this.apiSearchUrl,
+        url: "https://api.yelp.com/v3/businesses/search",
         content: {
           f: "json",
           latitude: x,
@@ -134,10 +134,10 @@ function(
       }).then(lang.hitch(this, function(response){
         console.log("HEY");
         console.log(response);
-        var i = 0;
+        var i;
 
         //Loop through all the results and add them to the feature layer
-        for (i < response.businesses.length; i++;){
+        for (i = 0; i < response.businesses.length; i++){
 
           //Setting up the attributes from the results
           var oid = i;

@@ -19,9 +19,9 @@ define([
 function(
   declare, BaseWidget, esriRequest, InfoTemplate, FeatureLayer, InfoTemplate, esriConfig, Point, SimpleMarkerSymbol, SimpleLineSymbol, PictureMarkerSymbol, Color, Graphic, GraphicsLayer, SpatialReference, lang
 ) {
-  return declare([], {
+  return declare([BaseWidget], {
     apiKey: '',
-    apiSearchUrl:'https://api.yelp.com/v3/businesses/search',
+    apiSearchUrl:'',
 
     constructor: function(apiKey, apiSearchUrl) {
       // We must pass an API key into the constructor or things will not work at all:

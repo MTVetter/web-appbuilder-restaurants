@@ -1,3 +1,4 @@
 {
-    "apiKey":"JAonzvDvhi6PPEDnasZivP49GngU4D5UXjQcnfVDzMiO99BInmBYCA84DVYbWdDF0syzwr2sEhceCOhFJN5Extj0cGvZwu-3WNpZh_GOd-TmPBz5NxE57ECyzw8YXHYx"
+    "apiKey":"JAonzvDvhi6PPEDnasZivP49GngU4D5UXjQcnfVDzMiO99BInmBYCA84DVYbWdDF0syzwr2sEhceCOhFJN5Extj0cGvZwu-3WNpZh_GOd-TmPBz5NxE57ECyzw8YXHYx",
+    "apiSearchUrl": "https://cors-anywhere.herokuapp.com/api.yelp.com/v3/businesses/search"
 }

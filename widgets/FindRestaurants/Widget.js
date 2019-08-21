@@ -29,7 +29,7 @@ function(declare, BaseWidget, Search, esriRequest, on, domConstruct, esriConfig,
     postCreate: function(){
       this.inherited(arguments);
       this.createSearchWidget();
-      this.yelp = new Yelp(this.config.apiKey);
+      this.yelp = new Yelp(this.config.apiKey, this.config.apiSearchUrl);
     },
 
     onOpen: function(){

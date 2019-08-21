@@ -18,7 +18,7 @@
   "portalUrl": "http://h-gac.maps.arcgis.com",
   "appId": "",
   "authorizedCrossOriginDomains": [],
-  "title": "Restaurant Search",
+  "title": "Yelp Search",
   "subtitle": "with Web AppBuilder for ArcGIS",
   "keepAppState": true,
   "logo": "images/app-logo.png",
@@ -159,12 +159,7 @@
           "relativeTo": "map"
         },
         "placeholderIndex": 1,
-        "id": "_51",
-        "name": "BasemapGallery",
-        "version": "2.8",
-        "closeable": true,
-        "uri": "widgets/BasemapGallery/Widget",
-        "config": "configs/BasemapGallery/config__51.json"
+        "id": "_51"
       },
       {
         "position": {
@@ -172,13 +167,8 @@
           "top": 150,
           "relativeTo": "map"
         },
-        "placeholderIndex": 1,
-        "id": "_52",
-        "name": "Measurement",
-        "version": "2.8",
-        "closeable": true,
-        "uri": "widgets/Measurement/Widget",
-        "config": "configs/Measurement/config__52.json"
+        "placeholderIndex": 2,
+        "id": "_52"
       },
       {
         "position": {
@@ -186,16 +176,12 @@
           "top": 200,
           "relativeTo": "map"
         },
-        "placeholderIndex": 1,
-        "id": "_53",
-        "name": "Print",
-        "version": "2.8",
-        "closeable": true,
-        "uri": "widgets/Print/Widget",
-        "config": "configs/Print/config__53.json"
+        "placeholderIndex": 3,
+        "id": "_53"
       },
       {
         "uri": "widgets/ExtentNavigate/Widget",
+        "visible": false,
         "position": {
           "top": 255,
           "left": 25,
@@ -222,8 +208,18 @@
       "right": 0,
       "bottom": 0
     },
-    "itemId": "d563cd4ee17d45139130ef702a1d05d8",
-    "mapOptions": {},
+    "itemId": "29ae4d333bf441fba6fbcae3504da951",
+    "mapOptions": {
+      "extent": {
+        "xmin": -10864621.149066616,
+        "ymin": 3313049.5582005484,
+        "xmax": -10399884.01709297,
+        "ymax": 3627358.618509041,
+        "spatialReference": {
+          "wkid": 102100
+        }
+      }
+    },
     "id": "map",
     "portalUrl": "https://h-gac.maps.arcgis.com",
     "mapRefreshInterval": {
@@ -253,10 +249,20 @@
         "index": 3
       },
       {
+        "name": "introJS",
+        "version": "2.9",
+        "uri": "widgets/introJS/Widget",
+        "index": 4,
+        "id": "widgets_introJS_Widget_20",
+        "position": {
+          "relativeTo": "map"
+        }
+      },
+      {
         "name": "FindRestaurants",
         "version": "2.8",
         "uri": "widgets/FindRestaurants/Widget",
-        "index": 4,
+        "index": 5,
         "id": "widgets_FindRestaurants_Widget_37",
         "config": "configs/FindRestaurants/config_widgets_FindRestaurants_Widget_37.json"
       },
@@ -265,9 +271,17 @@
         "version": "2.8",
         "uri": "widgets/selectByAttributes/Widget",
         "config": "configs/selectByAttributes/config_widgets_selectByAttributes_Widget_38.json",
-        "index": 5,
-        "id": "widgets_selectByAttributes_Widget_38",
-        "label": "Select by Attributes"
+        "index": 6,
+        "id": "widgets_selectByAttributes_Widget_38"
+      },
+      {
+        "name": "SaveSession",
+        "version": "2.7",
+        "IsController": false,
+        "uri": "widgets/SaveSession/Widget",
+        "config": "configs/SaveSession/config_widgets_SaveSession_Widget_39.json",
+        "index": 8,
+        "id": "widgets_SaveSession_Widget_39"
       }
     ],
     "groups": []

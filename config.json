@@ -18,7 +18,7 @@
   "portalUrl": "http://h-gac.maps.arcgis.com",
   "appId": "",
   "authorizedCrossOriginDomains": [],
-  "title": "Yelp Search",
+  "title": "Restaurant Search",
   "subtitle": "with Web AppBuilder for ArcGIS",
   "keepAppState": true,
   "logo": "images/app-logo.png",
@@ -208,7 +208,7 @@
       "right": 0,
       "bottom": 0
     },
-    "itemId": "29ae4d333bf441fba6fbcae3504da951",
+    "itemId": "d563cd4ee17d45139130ef702a1d05d8",
     "mapOptions": {
       "extent": {
         "xmin": -10864621.149066616,
